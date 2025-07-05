@@ -1,3 +1,5 @@
+# w3school python 공부하기
+
 # 1. 🐍 Python 학습 애니메이션&emsp;&emsp;&emsp;made by 젯슨맘 &emsp;using claude.ai
 
 <div align="center">
@@ -177,4 +179,100 @@ camera_resolution = (1920, 1080)
 lidar_position = (0.0, 0.0, 1.5)
 ```
 
+
+# 🐍 Python Tutorial 목차 정리 (개념 요약용)
+
+Python의 기초부터 고급 주제까지 폭넓게 다루는 목차 구조입니다. 각 항목은 코드 없이 어떤 개념인지 간단히 설명하는 데 중점을 둡니다.
+
+---
+
+## 📘 기본 문법
+
+- **Python HOME**: 튜토리얼 시작 페이지
+- **Python Intro**: 파이썬이 무엇인지 소개
+- **Python Get Started**: 설치, 실행 방법 등 시작 가이드
+- **Python Syntax**: 파이썬 문법의 기초적인 규칙
+- **Python Comments**: 주석 처리 방법 (`#`, triple quotes 등)
+- **Python Variables**: 변수 선언 및 사용법
+- **Python Data Types**: 기본 자료형 (int, str, list 등)
+- **Python Numbers**: 숫자 타입, 연산 등
+- **Python Casting**: 형변환 (예: int(), str())
+- **Python Strings**: 문자열 다루기
+- **Python Booleans**: 불 자료형 (True, False)
+- **Python Operators**: 산술, 논리, 비교, 할당 연산자
+
+---
+
+## 🧺 자료구조
+
+- **Python Lists**: 리스트 개념과 메서드
+- **Python Tuples**: 튜플의 특징과 사용법 (불변 리스트)
+- **Python Sets**: 집합 자료형, 중복 제거
+- **Python Dictionaries**: 키-값 쌍 구조의 자료형
+
+---
+
+## 🔁 제어 흐름
+
+- **Python If...Else**: 조건문
+- **Python Match**: 구조적 패턴 매칭 (Python 3.10+)
+- **Python While Loops**: while 반복문
+- **Python For Loops**: for 반복문
+
+---
+
+## 🧩 함수와 람다
+
+- **Python Functions**: 함수 정의와 호출
+- **Python Lambda**: 익명 함수(lambda) 사용법
+
+---
+
+## 🧬 객체 지향
+
+- **Python Arrays**: 배열 (파이썬 내장 배열 또는 numpy)
+- **Python OOP**: 객체 지향 프로그래밍 소개
+- **Python Classes/Objects**: 클래스 및 객체 정의
+- **Python Inheritance**: 상속 개념
+- **Python Iterators**: 반복자와 `__iter__`, `__next__`
+- **Python Polymorphism**: 다형성 개념
+
+---
+
+## 📦 모듈과 도구
+
+- **Python Scope**: 변수의 유효 범위
+- **Python Modules**: 모듈 만들기 및 가져오기
+- **Python Dates**: 날짜와 시간 다루기
+- **Python Math**: 수학 관련 내장 함수
+- **Python JSON**: JSON 데이터 처리
+- **Python RegEx**: 정규 표현식 사용
+- **Python PIP**: 패키지 설치 도구
+- **Python Try...Except**: 예외 처리
+
+---
+
+## 🖋 문자열 & 입력
+
+- **Python String Formatting**: 문자열 포맷팅 (f-string, %, format())
+- **Python User Input**: 사용자 입력 받기
+
+---
+
+## 🧰 가상 환경
+
+- **Python VirtualEnv**: 가상환경 만들기 및 관리
+
+---
+
+## 📂 파일 처리
+
+- **Python File Handling**: 파일 열기, 닫기, 읽기, 쓰기 개요
+- **Python Read Files**: 파일 읽기
+- **Python Write/Create Files**: 파일 쓰기/생성
+- **Python Delete Files**: 파일 삭제
+
+---
+
+> ⚠ 이 문서는 샘플 코드 없이 각 주제의 개념만 정리된 문서입니다.
 

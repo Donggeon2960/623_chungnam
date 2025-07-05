@@ -1,137 +1,108 @@
-좋아, GitHub에 올릴 수 있게 **Markdown (.md)** 형식으로 정리해줄게. 아래 내용을 그대로 복사해서 `README.md`나 다른 `.md` 파일에 붙여넣으면 깔끔하게 정리돼.
+
+# 🧪 Google Colab 사용법 정리 (2025년 최신)
+
+> Google Colab은 브라우저에서 실행되는 Jupyter Notebook 환경으로, 파이썬 실습부터 데이터 분석, 머신러닝까지 손쉽게 실습할 수 있습니다.
 
 ---
 
-````markdown
-# Google Colab 사용법 정리 (2025년 최신)
-
-> Google Colab은 웹 브라우저에서 실행되는 Jupyter Notebook 환경으로, 파이썬 실습부터 머신러닝까지 모두 가능한 무료 플랫폼입니다.
+## 📌 목차
+1. [Colab 시작하기](#colab-시작하기)
+2. [기본 조작 단축키](#기본-조작-단축키)
+3. [런타임 환경 설정](#런타임-환경-설정)
+4. [패키지 설치 명령어](#패키지-설치-명령어)
+5. [Google Drive 연동](#google-drive-연동)
+6. [파일 업로드 / 다운로드](#파일-업로드--다운로드)
+7. [자주 발생하는 오류 해결](#자주-발생하는-오류-해결)
+8. [기타 꿀팁](#기타-꿀팁)
 
 ---
 
-## 1. 시작하기
+## 📁 Colab 시작하기
 
 1. [https://colab.research.google.com](https://colab.research.google.com) 접속
 2. Google 계정 로그인
-3. **[파일 → 새 노트북]** 클릭 → 파일명 변경
+3. **[파일 → 새 노트북]** 클릭 후 파일명 변경
 4. 노트북은 자동으로 Google Drive에 저장됨
 
 ---
 
-## 2. 기본 조작 단축키
+## ⌨️ 기본 조작 단축키
 
-| 기능 | 단축키 |
-|------|--------|
-| 셀 실행 | `Shift + Enter` |
-| 셀 추가 (아래) | `Ctrl + M B` |
-| 셀 추가 (위) | `Ctrl + M A` |
-| 셀 삭제 | `Ctrl + M D` |
-
----
-
-## 3. 하드웨어 설정 (GPU/TPU)
-
-1. 상단 메뉴: **[런타임 → 런타임 유형 변경]**
-2. 하드웨어 가속기 선택:
-   - None = CPU
-   - GPU = NVIDIA T4 / A100 (Pro)
-   - TPU = TPU v5e (대형 모델용)
-
-> 💡 Pro+ 사용 시 더 긴 세션 시간 및 H100 GPU 사용 가능
+| 기능            | 단축키          |
+|-----------------|-----------------|
+| 셀 실행         | `Shift + Enter` |
+| 셀 추가 (아래)  | `Ctrl + M B`    |
+| 셀 추가 (위)    | `Ctrl + M A`    |
+| 셀 삭제         | `Ctrl + M D`    |
 
 ---
 
-## 4. 패키지 설치 & 시스템 명령
+## ⚙️ 런타임 환경 설정
 
-```python
-!pip install numpy pandas matplotlib
-!apt-get update && apt-get install -y graphviz
-````
-
-* `!`로 시작하는 명령어는 터미널 명령어
-* `.py` 코드 외에도 셸 명령어를 직접 실행 가능
+| 설정 항목           | 설명                                                                 |
+|--------------------|----------------------------------------------------------------------|
+| 런타임 유형 변경     | `런타임` 메뉴 → `런타임 유형 변경` 선택                                  |
+| 하드웨어 가속기     | `None` (CPU), `GPU` (T4, A100), `TPU` (TPU v5e) 선택 가능               |
+| Pro 플랜 활용 시 장점 | 더 빠른 GPU (A100/H100), 더 긴 세션 시간, 더 많은 RAM 사용 가능              |
 
 ---
 
-## 5. Google Drive 연동
+## 📦 패키지 설치 명령어
 
-```python
-from google.colab import drive
-drive.mount('/content/drive')
-```
-
-* 처음 실행 시 권한 승인 필요
-* 이후 `drive/MyDrive/` 경로로 내 파일 접근 가능
+| 목적                | 명령어 예시                                        |
+|---------------------|----------------------------------------------------|
+| 파이썬 패키지 설치   | `!pip install pandas numpy matplotlib`             |
+| 리눅스 패키지 설치   | `!apt-get install -y graphviz`                     |
+| requirements.txt 설치 | `!pip install -r requirements.txt`                 |
 
 ---
 
-## 6. 파일 다루기
+## 🗃 Google Drive 연동
 
-| 작업             | 방법                                |
-| -------------- | --------------------------------- |
-| 로컬 파일 업로드      | 왼쪽 사이드바 → 파일 → 업로드                |
-| 외부 URL 파일 다운로드 | `!wget [URL]`                     |
-| `.csv` 불러오기 예시 | `pd.read_csv('/content/파일명.csv')` |
-
----
-
-## 7. 결과 저장 & 공유
-
-* **파일 → 다운로드 → .ipynb / .py / .html / .pdf** 등으로 저장 가능
-* **GitHub 연동**: Colab에서 바로 `.ipynb`를 GitHub에 저장 가능
-* **공유**: 상단의 \[공유] 버튼을 눌러 보기/수정 권한 부여
+| 항목        | 설명                                                                 |
+|-------------|----------------------------------------------------------------------|
+| 연동 코드    | `from google.colab import drive`<br>`drive.mount('/content/drive')` |
+| 마운트 경로  | `/content/drive/MyDrive/` 를 통해 내 Google Drive에 접근 가능           |
 
 ---
 
-## 8. 유용한 기능 (2025년 기준)
+## 📤 파일 업로드 / 다운로드
 
-* **Gemini 2.5 Flash 통합**: 코드 설명, 오류 수정, 테스트 생성 등 AI 도우미
-* **Agentic Workflow Recorder**: 노트북 실행 과정을 파이프라인 형태로 변환
-* **배터리 아이콘**: 세션 남은 시간 시각화
-
----
-
-## 9. 자주 발생하는 오류 해결
-
-| 오류 메시지               | 해결 방법                                      |
-| -------------------- | ------------------------------------------ |
-| `CUDA out of memory` | `torch.cuda.empty_cache()` 호출 후 배치 크기 줄이기  |
-| 런타임 끊김               | 런타임 → 다시 시작                                |
-| 한글 깨짐                | `!apt-get install -y fonts-nanum` 설치 후 재시작 |
+| 작업              | 방법 또는 명령어                                                        |
+|-------------------|-------------------------------------------------------------------------|
+| 로컬 파일 업로드   | Colab 왼쪽 → `파일` 탭 → `업로드` 버튼 클릭                                 |
+| URL 다운로드       | `!wget [URL]`                                                           |
+| Colab 파일 다운로드 | `files.download('파일명')`<br>→ `from google.colab import files` 필요 |
 
 ---
 
-## 10. 치트시트 요약
+## ❗ 자주 발생하는 오류 해결
 
-```python
-# ▶ 셀 실행
-Shift + Enter
-
-# ▶ GPU 활성화
-런타임 → 런타임 유형 변경 → GPU 선택
-
-# ▶ Drive 연동
-from google.colab import drive
-drive.mount('/content/drive')
-
-# ▶ 패키지 설치
-!pip install 패키지명
-```
+| 오류 메시지              | 해결 방법                                          |
+|--------------------------|---------------------------------------------------|
+| `CUDA out of memory`     | `torch.cuda.empty_cache()` 호출 후 배치 크기 줄이기 |
+| 런타임 세션 끊김         | `런타임` → `다시 시작`                             |
+| 한글 폰트 깨짐           | `!apt-get install -y fonts-nanum` 설치 후 재시작    |
+| 설치 후 인식 안 됨       | `런타임` → `런타임 다시 시작`                      |
 
 ---
 
-## 📌 참고 링크
+## 💡 기타 꿀팁
 
-* [공식 Colab 도움말](https://research.google.com/colaboratory/faq.html)
-* [Colab Pro 요금제 안내](https://colab.research.google.com/signup)
-* [Colab GitHub 연동 가이드](https://colab.research.google.com/github)
-
----
-
-```
+- 셀 내부에서 마크다운 작성: `텍스트 셀`을 선택해 `# 제목`, `**굵게**`, `- 리스트` 등 작성 가능
+- 노트북 저장: `.ipynb` → `.py` / `.html` / `.pdf`로 변환 가능
+- 공유: 오른쪽 상단의 `공유` 버튼 클릭 → 보기 / 편집 권한 설정
+- GitHub 연동: Colab에서 GitHub 저장소로 바로 저장 가능
 
 ---
 
-필요하다면 `.ipynb` 파일도 같이 업로드할 수 있도록 구조까지 잡아줄 수 있어. 혹시 너가 쓰고자 하는 주제나 목차가 따로 있으면 알려줘서 더 맞춤형으로 만들어줄게.
-```
+## 📎 참고 링크
 
+- [Colab 공식 홈페이지](https://colab.research.google.com/)
+- [Colab 도움말 (공식 FAQ)](https://research.google.com/colaboratory/faq.html)
+- [Colab Pro 요금제 안내](https://colab.research.google.com/signup)
+
+---
+
+> 작성자: [사용자 이름]  
+> 날짜: 2025년 7월

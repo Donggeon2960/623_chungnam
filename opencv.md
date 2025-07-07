@@ -38,23 +38,32 @@
 
 ## 3️⃣ OpenCV 자주 나오는 용어 정리
 
-| 용어 | 의미 |
+OpenCV에서 자주 등장하는 개념, 함수, 연산, 데이터 구조들을 정리한 표입니다. 초보자부터 중급자까지 참고하기에 좋은 용어 모음입니다.
+
+---
+
+| 용어 | 설명 |
 |------|------|
-| `cv2` | OpenCV의 Python 인터페이스 모듈 이름 (`import cv2`) |
-| BGR | OpenCV의 기본 색상 순서 (Blue-Green-Red) |
-| RGB | 일반적인 색상 순서 (Red-Green-Blue, matplotlib에서 사용) |
-| Grayscale | 흑백 이미지 (1채널, 0~255 값) |
-| Threshold | 임계값 이진화 처리 (흑/백 이미지) |
-| Blurring | 이미지의 노이즈 제거 또는 흐리게 만드는 작업 |
-| Canny Edge | 엣지(경계선)를 검출하는 알고리즘 |
-| Haar Cascade | 얼굴, 눈 등을 인식하기 위한 기계학습 기반 탐지기 |
-| Contour | 윤곽선 추출 결과, 객체 경계를 정의하는 선 |
-| ROI (Region of Interest) | 이미지에서 특정 부분만 잘라서 사용하는 영역 |
-| Kernel | 필터링에 사용하는 작은 행렬 (예: 블러 필터 등) |
-| DNN | OpenCV에서 딥러닝 추론을 지원하는 모듈 (`cv2.dnn`) |
-| VideoCapture | 비디오/웹캠 스트리밍을 처리하는 객체 |
-| waitKey | 키보드 입력 대기 (영상 출력 루프에서 자주 사용됨) |
-| imread / imshow / imwrite | 이미지 불러오기, 보기, 저장 함수 |
+| **Mat** | 이미지 데이터를 담는 OpenCV 기본 객체. 다차원 배열(matrix) 형태로 픽셀 값을 저장함. |
+| **BGR / RGB** | OpenCV 기본 컬러 순서는 BGR(Blue, Green, Red). Matplotlib 등은 RGB 순서를 사용함. |
+| **ROI** | Region Of Interest. 이미지에서 관심 있는 부분(영역)을 잘라내어 처리할 때 사용함. |
+| **픽셀(Pixel)** | 영상의 최소 단위. Mat 객체의 각 요소(element)에 해당하며, 그레이스케일은 1채널, 컬러는 3채널(BGR)로 표현됨. |
+| **채널(Channel)** | 각 픽셀이 갖는 값의 축. 그레이스케일=1채널, 컬러=3채널(B, G, R). |
+| **스레숄드(Threshold)** | 임계값 기준으로 이진화(흑/백) 이미지로 변환함. 예: `cv2.threshold()` |
+| **가우시안 블러(Gaussian Blur)** | 노이즈 제거를 위해 사용. 커널 크기와 표준편차로 설정하며 부드러운 흐림 효과를 줌. |
+| **모폴로지 연산(Morphology)** | 침식(erode), 팽창(dilate), 열기(open), 닫기(close) 등을 통해 이미지의 형태를 유지하며 잡음 제거. |
+| **엣지 검출(Edge Detection)** | `cv2.Canny()`, Sobel, Laplacian 등을 이용해 경계를 검출하는 알고리즘. |
+| **컨투어(Contour)** | `cv2.findContours()`로 객체의 외곽선을 찾음. 윤곽선 추적 및 분석에 사용됨. |
+| **히스토그램(Histogram)** | 픽셀 값의 분포를 나타내는 그래프. 밝기/명암 대비 등을 분석하는 데 사용. |
+| **계조 향상(Equalization)** | `cv2.equalizeHist()`를 통해 명암 대비를 개선하는 기법. |
+| **컬러 공간 변환** | `cv2.cvtColor()`로 RGB↔GRAY, BGR↔HSV 등 색상 기반 변환에 사용. |
+| **기하 변환(Geometric Transform)** | `cv2.warpAffine()`, `cv2.warpPerspective()` 등으로 이미지 회전, 이동, 크기 변환 수행. |
+| **특징 검출/매칭** | SIFT, SURF, ORB, AKAZE 등 알고리즘으로 키포인트와 디스크립터를 추출하여 유사한 이미지를 비교. |
+| **카메라 보정** | 왜곡된 카메라 이미지를 보정하고, 내부 파라미터 추정. chessboard 패턴을 통해 캘리브레이션 수행. |
+| **비디오 캡처(VideoCapture)** | `cv2.VideoCapture()`로 웹캠/비디오 파일을 읽음. `read()`로 프레임을 가져올 수 있음. |
+| **윈도우(Window)** | `cv2.namedWindow()`, `cv2.imshow()`, `cv2.waitKey()`, `cv2.destroyAllWindows()` 등으로 이미지 창 관리. |
+
+---
 
 ---
 
